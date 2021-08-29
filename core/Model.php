@@ -12,7 +12,7 @@ abstract class Model
 
     public static function fields($fields) {
         static::$fields = '*';
-        if (!empty(static::$fields)) {
+        if (!empty($fields)) {
             if (is_array($fields)) {
                 static::$fields = implode(',', $fields);
             }
@@ -70,9 +70,7 @@ abstract class Model
         if (empty($data) || !is_array($data)) {
             throw new \Exception("Data is not valid");
         }
-        foreach($data as $field => $value) {
-            
-        }
+
         $fields = array_keys($data);
         $fields = implode(',', $fields);
         $values = array_values($data);
